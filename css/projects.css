@@ -1,0 +1,41 @@
+body{
+    margin: 0;
+    background-image: url("../img/bodybackground.jpg");
+    background-repeat: repeat-y;
+    font-family: 'Montserrat', sans-serif;
+}
+
+h1{
+    color: #3E656C;
+    margin:  2% 0;
+    text-align: center;
+/*----------------------------------------hr------------------------------------------------------*/    
+}
+#allproject{
+    margin: 2% 2%;
+   
+}
+h3{
+    font-size: 15px;
+    margin-top: 15%;
+    margin-bottom: 15%;
+    text-align: center;
+    color: rgb(94, 97, 97);
+}
+
+/*--------------------------------------------Footer------------------------------------*/
+#footer{
+    margin-top:2%;
+    text-align: center;
+    background-color:#3E656C;
+    padding:15px;
+    
+    
+}
+#footer a{
+    
+   
+    color:white;background:#3E656C;
+    
+    
+}

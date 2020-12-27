@@ -1,0 +1,253 @@
+/*-----------------------------------------------Body---------------------------------------------*/
+body{
+    margin: 0;
+    background-image: url("../img/bodybackground.jpg");
+    background-repeat: repeat-y;
+    font-family: 'Montserrat', sans-serif;
+
+}
+/*----------------------------------------h1------------------------------------------------------*/
+h1{
+    color: #3E656C;
+    padding: 50px 0;;
+/*----------------------------------------hr------------------------------------------------------*/    
+}
+hr{
+    border: dotted #5e99a3 10px;
+    opacity: 0.4;
+    border-bottom: none;
+    width: 10%;
+    margin: 100px auto;
+}
+/*----------------------------------------section------------------------------------------------------*/
+section{
+    text-align: center;
+    margin: 10% 0 10% 0 ;
+}
+/*----------------------------------------Home Section------------------------------------------------------*/
+#header{
+    background-image: url("../img/headerbackground.jpg");
+    height: 600px;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center center;
+    margin: 0 0 10% 0
+}
+
+#header .container{
+    padding:1% 2%;
+}
+
+.navbar-brand{
+    font-family: 'Lobster', cursive;;
+   
+}
+.navbar.scrolled{
+    position: fixed;
+    background:#3E656C;
+  }
+.navbar-nav li {
+    padding: 0 20px;
+    color:#3E656C ;
+    font-weight: bold;
+}
+.navbar-nav li a:hover{
+    background-color: white;
+    border-radius: 10px;
+    transform: scale(1.2)
+}
+#title{
+    margin: 1%;
+    text-align: center;
+}
+#title img{
+    margin-top: 8%;
+}
+#name{
+    margin-top: 2%;
+    font-family: 'Sacramento', cursive;
+    color: #3E656C;
+    padding: 5px 0;
+    
+    
+}
+#subheading{
+    font-weight: bold;
+}
+#title button{
+    margin:10px;
+}
+
+/*--------------------------------------------------------Skills---------------------------------------------------------------*/
+.box{
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    
+}
+.box .percentage{
+    position: relative; 
+    width:150px;
+    height: 150px;
+
+
+}
+.box .percentage svg{
+    position: relative;
+    width: 150px;
+    height: 150px;
+
+}
+
+.box .percentage svg circle{
+    width: 150px;
+    height: 150px;
+    fill: none;
+    stroke: #3E656C;
+    stroke-width: 10px;
+    transform: translate(5px,5px);
+    stroke-dasharray:440;
+    stroke-dashoffset: 440;
+
+}
+.box .percentage svg circle:nth-child(1){
+    stroke-dashoffset: 0;
+    stroke:#ACEDED;
+
+}
+.box .percentage svg  #android-skills{
+    stroke-dashoffset: 176;
+    stroke:#3E656C;
+
+}
+.box .percentage svg  #python-skills{
+    stroke-dashoffset: 132;
+    stroke:#3E656C;
+
+}
+.box .percentage svg  #web-skills{
+    stroke-dashoffset: 220;
+    stroke:#3E656C;
+
+}
+.box .percentage .number{
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+}
+.box .percentage .number h1{
+    font-size: 48px;
+}
+.box .percentage .number h1 span{
+    font-size: 24px;
+}
+
+.container .skills-name{
+    padding-top: 12px;
+}
+
+/*----------------------------------------------Projects-----------------------------------------*/
+#projects{
+    background-color: #3E656C;
+    margin:0 2%;
+}
+
+
+#projects h1{
+    margin-bottom:0;
+    padding:10px 0;
+    color:white;
+}
+.slideshow{
+    margin: 1% 5%;
+    padding-bottom: 40px;
+    
+}
+
+.slideshow-container{
+    position: relative;
+    
+}
+
+
+.slideshow-container a{
+position: absolute;
+  top: 50%;
+  left: 20%;
+  transform: translate(-50%, -50%);
+  -ms-transform: translate(-50%, -50%);
+  background-color: #ACEDED;
+  border: none;
+  color:black;
+ 
+ 
+  
+ 
+  
+
+}
+.slideshow-container button:hover{
+    padding: 10px 20px;
+    background-color:#ACEDED;
+}
+ /*-------------------------------------------Contact----------------------------------------*/
+#contact .container{
+    margin-top:5%;
+}
+#contact .container .contact-column{
+    padding: 0 2%;
+}
+#about-me{
+    text-align: center;
+    padding:  0 4%;
+}
+#about-me h2{
+    
+    font-family: 'Lobster', cursive;
+
+}
+#about-me p{
+    line-height: 2.3;
+    text-align: justify;
+    padding-top: 10%;
+}
+
+#contact-form{
+    text-align: left;
+    padding: 0 4%;
+    
+}
+#contact-form button:hover{
+    background-color: cyan;
+    border: none;
+}
+
+/*--------------------------------------------Footer------------------------------------*/
+#footer{
+    margin-top:2%;
+    text-align: center;
+    background-color:#3E656C;
+    padding:15px;
+    
+}
+#footer a{
+    
+   
+    color:white;background:#3E656C;
+    
+    
+}
+@media (max-width: 575.98px) { 
+    .navbar{
+        position: relative;
+    }
+ }
+
