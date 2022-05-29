@@ -13,7 +13,7 @@ var lastEvent;
 var mouseDown = false;
 
 var brushSize=40
-
+/*
 // On mouse events on the canvas
 $canvas.mousedown(function (e) {
     lastEvent = e;
@@ -36,7 +36,64 @@ $canvas.mousedown(function (e) {
     mouseDown = false;
 }).mouseleave(function () {
     $canvas.mouseup();
-});
+}); */
+
+var myCanvas = document.getElementById("mainCanvas");
+
+myCanvas.addEventListener("mousemove",function(e){
+    myMove(e)
+})
+myCanvas.addEventListener("mousedown",function(e){
+    myDown(e)
+})
+
+myCanvas.addEventListener("mouseup",function(e){
+    mouseDown = false;
+})
+
+myCanvas.addEventListener("mouseleave",function(e){
+    myCanvas.onmouseup()
+})
+
+
+myCanvas.addEventListener("touchmove",function(e){
+    myMove(e)
+})
+myCanvas.addEventListener("touchstart",function(e){
+    myDown(e)
+})
+
+myCanvas.addEventListener("touchend",function(e){
+    mouseDown = false;
+})
+
+myCanvas.addEventListener("mouseleave",function(e){
+    myCanvas.onmouseup()
+})
+
+
+
+
+function myDown(e){
+    lastEvent = e;
+    mouseDown = true;
+}
+
+function myMove(e){
+ // Draw lines
+ if (mouseDown) {
+    context.beginPath();
+    
+    context.moveTo(lastEvent.offsetX, lastEvent.offsetY);
+    context.lineTo(e.offsetX, e.offsetY);
+    context.strokeStyle = colour;
+    context.lineWidth = brushSize;
+    context.lineCap = 'round';
+    context.stroke();
+   
+    lastEvent = e;
+}
+}
 
 
 document.getElementById('clear').addEventListener('click',
