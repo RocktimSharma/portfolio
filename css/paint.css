@@ -98,11 +98,13 @@ button {
 .error{
 	color:red;
 	font-size: 1rem;
+	text-align: center;
 }
 
 .success{
 	color: green;
 	font-size: 1rem;
+	text-align: center;
 }
 
 #myRange{
