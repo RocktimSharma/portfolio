@@ -1,0 +1,110 @@
+* {
+	margin: 0;
+	padding: 0;
+}
+
+.heading{
+    text-align: center;
+}
+
+body {
+	background: #F5F5F5;
+	font-family: sans-serif;
+	height: 100%;
+	width: 100%;
+}
+
+h2 {
+  text-align: center;
+  margin: 20px;
+  font-family: 'Open Sans', sans-serif;
+}
+
+
+/* CANVAS STYLING
+===================*/
+
+canvas {
+	background: #000;
+	display: block;
+	margin: 40px auto 10px;
+	border-radius: 5px;
+	border-left: 1px solid #E0E0E0;
+	border-right: 1px solid #E0E0E0;
+	border-top: 1px solid #E0E0E0;
+	box-shadow: 0 4px 0 0 #E0E0E0;
+	cursor: url(../img/cursor.png), crosshair;
+}
+
+/* CONTROLS (NEW COLOURS)
+=======================*/
+
+.controls {
+	min-height: 60px;
+	margin: 0 auto;
+	width: 600px;
+	border-radius: 5px;
+	overflow: hidden;
+    
+}
+
+/* BUTTON STYLES
+==============*/
+
+button {
+	background: #68B25B;
+	box-shadow: 0 3px 0 0 #6A845F;
+	color: #fff;
+	outline: none;
+	cursor: pointer;
+	text-shadow: 0 1px #6A845F;
+	display: block;
+	font-size: 16px;
+	line-height: 40px;
+}
+
+#clear{
+    background: #ff0000;
+	box-shadow: 0 3px 0 0 #ff9292;
+    text-shadow: 0 1px #ffa8a8;
+}
+#revealColorSelect {
+	border: none;
+	border-radius: 5px;
+	margin: 10px auto;
+	padding: 5px 20px;
+	width: 160px;
+}
+#clear {
+	border: none;
+	border-radius: 5px;
+	margin: 10px auto;
+	padding: 0 20px;
+	width: 160px;
+	height: 40px;
+}
+
+
+#colorSelect button {
+	border: none;
+	border-top: 1px solid #6A845F;
+	border-radius: 0 0 5px 5px;
+	clear: both;
+	margin: 10px -10px -7px;
+	padding: 5px 10px;
+	width: 325px;
+}
+
+.error{
+	color:red;
+	font-size: 1rem;
+}
+
+.success{
+	color: green;
+	font-size: 1rem;
+}
+
+#myRange{
+	width: 100%;
+}
