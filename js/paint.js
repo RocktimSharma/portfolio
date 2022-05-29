@@ -9,10 +9,13 @@ var context = $canvas[0].getContext("2d");
 
 context.fillStyle = "#000";
 context.fillRect(0, 0, 350, 350);
-
-
+var lastEvent;
+var mouseDown = false;
 
 var brushSize=40
+
+var myCanvas = document.getElementById("mainCanvas");
+
 
 
 // =============
