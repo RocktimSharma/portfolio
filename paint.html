@@ -1,0 +1,50 @@
+<html>
+  
+  <!--
+    Based off Team Treehouse jQuery Project
+  -->
+  
+<head>
+<meta charset="utf-8">
+<title>Drawing App</title>
+<script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+<script src="https://widget.cloudinary.com/v2.0/global/all.js" type="text/javascript"></script>
+<link rel="stylesheet" href="css/paint.css" type="text/css" media="screen" title="no title">
+<link href='https://fonts.googleapis.com/css?family=Open+Sans:300' rel='stylesheet' type='text/css'>
+</head>
+<body>
+    <div class="heading">
+  <h2>Write Letter <img src="https://cdn1.iconfinder.com/data/icons/fatcow/32/painbrush.png" alt="" class="paint"></h2>
+  <p>Draw the assamese letter "  <b>ৰ</b>  " and click on the <b>DONE</b> button </p>
+  <small>This is for a college project so kindly please don't draw/write anything other than what is asked.</small>
+  <br></br>
+  <ul>
+    <li><b>Step 1:</b> Write only one <b>ৰ</b> in the whole page and click on the DONE button</li>
+    <li><b>Step 2:</b> Adjust the brush size and repeat the step 1 </li>
+  </ul>  
+
+</div>
+  <div id="message">
+
+  </div>
+ 
+<canvas	width="350" height="350" id="mainCanvas"></canvas>
+
+<div class="controls">
+  <p> Set brush size</p>
+  <br>
+  <input type="range" min="10" max="50" value="40" class="slider" id="myRange">
+  <br>
+<br>
+	<button id="clear" >Clear Canvas</button>
+	<button id="revealColorSelect" type="button"  >DONE</button>
+</div>
+
+
+
+
+
+<script src="https://code.jquery.com/jquery-1.11.0.min.js" type="text/javascript" charset="utf-8"></script>
+<script  src="js/paint.js" type="text/javascript" charset="utf-8"></script>
+</body>
+</html>
